@@ -12,6 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+			// sh 'mvn test'
                 bat("mvn test")
             }
             post {
@@ -22,7 +23,8 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                bat(".\jenkins\scripts\deliver.sh")
+			// sh './jenkins/scripts/deliver.sh'
+                bat(".\\jenkins\\scripts\\deliver.sh")
             }
         }
     }
